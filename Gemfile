@@ -42,6 +42,9 @@ gem 'ruby-openid'
 gem 'kramdown'
 gem 'lograge', '~> 0.4'
 
+# js runtime
+gem 'therubyracer'
+
 group :production do
   gem 'rails_12factor'
 end
@@ -82,3 +85,4 @@ group :test, :development do
   gem 'vagrant'
   gem 'timecop'
 end
+

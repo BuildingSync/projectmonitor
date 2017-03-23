@@ -4,7 +4,6 @@ zeus.json
 .DS_Store
 *.iml
 *.ipr
-config/database.yml
 config/auth.yml
 config/ci.yml
 config/settings.local.yml
@@ -12,6 +11,7 @@ config/settings.local.yml
 db/*.sqlite3
 log/*.log
 tmp/**/*
+Gemfile.lock
 .sass-cache/
 tags
 *.log

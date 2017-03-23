@@ -193,6 +193,25 @@ like so:
 
     curl --user ${username}:${password} -F "content=@-" ${your_project_monitor_host}/configuration < ${your_configuration.yml}
 
+## Development
+
+### Docker
+
+```bash
+rm -f Gemfile.lock
+export MYSQL_ROOT_PASSWORD=super-secure-password
+export PROJECT_MONITOR_LOGIN=username
+export PROJECT_MONITOR_EMAIL=username@buildingsync.net
+export PROJECT_MONITOR_PASSWORD=super-secure-password
+export password_auth_pepper=5980fb52ecabf9493bc997f34fd92089469a668608ac1b2c578d77f5c77197b7d36ab832bc1836043b94d7c5674fc544974b0dccf2eeea9fabcaf2f85ded51b9
+export password_auth_stretches=10
+
+docker-compose build
+docker-compose up
+# In another terminal run
+docker-compose run web rake db:seed
+```
+
 ## Deployment
 
 ### Cloud Foundry
