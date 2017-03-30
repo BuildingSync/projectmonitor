@@ -96,7 +96,9 @@ ADD /docker/server/run-workers.sh /etc/buildingsync/run-workers.sh
 # wait-for-it script
 ADD /docker/server/wait-for-it.sh /usr/local/wait-for-it.sh
 
-# TODO: figure out website logging
+# logs to stdout
+RUN ln -sf /dev/stdout /var/log/nginx/access.log
+RUN ln -sf /dev/stdout /var/log/nginx/error.log
 
 CMD ["/etc/buildingsync/run-server.sh"]
 EXPOSE 8080
