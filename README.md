@@ -207,9 +207,12 @@ export password_auth_pepper=5980fb52ecabf9493bc997f34fd92089469a668608ac1b2c578d
 export password_auth_stretches=10
 
 docker-compose build
-docker-compose up
-# In another terminal run
+nohup docker-compose up -d
+
 docker-compose run web rake db:seed
+
+# following logs
+docker-compose logs -f
 ```
 
 ## Deployment
