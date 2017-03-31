@@ -1,0 +1,18 @@
+[Unit]
+Description=Project Monitor
+After=docker.service
+Requires=docker.service
+
+[Service]
+Restart=always
+Environment="MYSQL_ROOT_PASSWORD=super-secure-password"
+Environment="PROJECT_MONITOR_LOGIN=username"
+Environment="PROJECT_MONITOR_EMAIL=username@buildingsync.net"
+Environment="PROJECT_MONITOR_PASSWORD=super-secure-password"
+Environment="password_auth_pepper=5980fb52ecabf9493bc997f34fd92089469a668608ac1b2c578d77f5c77197b7d36ab832bc1836043b94d7c5674fc544974b0dccf2eeea9fabcaf2f85ded51b9"
+Environment="password_auth_stretches=5"
+ExecStart=/usr/local/bin/docker-compose -f /home/ubuntu/projectmonitor/docker-compose.yml up
+ExecStop=/usr/local/bin/docker-compose -f /home/ubuntu/projectmonitor/docker-compose.yml stop
+
+[Install]
+WantedBy=multi-user.target

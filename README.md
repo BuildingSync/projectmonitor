@@ -204,7 +204,7 @@ export PROJECT_MONITOR_LOGIN=username
 export PROJECT_MONITOR_EMAIL=username@buildingsync.net
 export PROJECT_MONITOR_PASSWORD=super-secure-password
 export password_auth_pepper=5980fb52ecabf9493bc997f34fd92089469a668608ac1b2c578d77f5c77197b7d36ab832bc1836043b94d7c5674fc544974b0dccf2eeea9fabcaf2f85ded51b9
-export password_auth_stretches=10
+export password_auth_stretches=5
 
 docker-compose build
 nohup docker-compose up -d
